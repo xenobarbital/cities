@@ -1,17 +1,19 @@
 import {StyleSheet} from 'react-native';
 
+import colors from '../../constants/colors';
+
 const styles = StyleSheet.create({
   wrapper: {
-    color: '#fff',
+    color: colors.white,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 11,
-    borderBottomColor: '#fff',
+    borderBottomColor: colors.white,
     borderBottomWidth: 2,
   },
   textInput: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 24,
     width: '85%',
   },

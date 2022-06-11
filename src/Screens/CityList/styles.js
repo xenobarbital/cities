@@ -7,9 +7,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingVertical: 40,
   },
-  text: {
-    color: '#fff',
-  },
 });
 
 export default styles;
