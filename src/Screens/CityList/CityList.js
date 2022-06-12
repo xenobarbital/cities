@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   ToastAndroid,
   Keyboard,
+  Alert,
 } from 'react-native';
 import Config from 'react-native-config';
 import axios from 'axios';
@@ -12,57 +13,6 @@ import axios from 'axios';
 import SearchBar from '../../Components/SearchBar';
 import CityBar from '../../Components/CityBar';
 import styles from './styles';
-
-const MOCK_DATA = [
-  {
-    id: '1',
-    city: 'Moscow1',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '2',
-    city: 'Moscow2',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '3',
-    city: 'Moscow3',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '4',
-    city: 'Moscow4',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '5',
-    city: 'Moscow5',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '6',
-    city: 'Moscow6',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '7',
-    city: 'Moscow7',
-    temp: 15,
-    time: '15:45',
-  },
-  {
-    id: '8',
-    city: 'Moscow8',
-    temp: 15,
-    time: '15:45',
-  },
-];
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -127,10 +77,21 @@ const CityList = () => {
 
   const deleteData = useCallback(
     id => () => {
-      dispatch({
-        type: 'delete',
-        id,
-      });
+      Alert.alert('Warning', 'Wish to delete the entry?', [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            dispatch({
+              type: 'delete',
+              id,
+            });
+          },
+        },
+      ]);
     },
     [],
   );
