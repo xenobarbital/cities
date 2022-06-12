@@ -3,6 +3,7 @@ import {View, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import styles from './styles';
+import colors from '../../constants/colors';
 
 const SearchBar = ({value, onChangeText, onSubmitEditing, onPress}) => {
   return (
@@ -10,13 +11,13 @@ const SearchBar = ({value, onChangeText, onSubmitEditing, onPress}) => {
       <TextInput
         style={styles.textInput}
         placeholder="search"
-        placeholderTextColor="#878787"
+        placeholderTextColor={colors.gray}
         value={value}
         onChangeText={onChangeText}
         onSubmitEditing={onSubmitEditing}
       />
       <TouchableOpacity onPress={onPress}>
-        <Icon name="search" color="#fff" size={30} />
+        <Icon name="search" color={colors.white} size={30} />
       </TouchableOpacity>
     </View>
   );
