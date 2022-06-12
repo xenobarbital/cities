@@ -14,7 +14,16 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
   },
-  textBig: {
+  textCity: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    marginBottom: 11,
+  },
+  textTime: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-SemiBold',
+  },
+  textTemperature: {
     fontSize: 64,
     fontFamily: 'Montserrat-SemiBold',
   },
