@@ -22,7 +22,7 @@ const MOCK_DATA = [
   {
     id: '3',
     city: 'Katmandu',
-    temp: '+10',
+    temp: '+18',
     time: '23:21',
   },
 ];

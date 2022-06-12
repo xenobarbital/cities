@@ -16,11 +16,12 @@ const styles = StyleSheet.create({
   },
   textBig: {
     fontSize: 64,
-    fontWeight: '400',
+    fontFamily: 'Montserrat-SemiBold',
   },
   superscript: {
-    fontSize: 13,
-    lineHeight: 15,
+    fontSize: 20,
+    lineHeight: 22,
+    fontFamily: 'Montserrat-SemiBold',
   },
   rightBlock: {
     flexDirection: 'row',
