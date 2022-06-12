@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import styles from './styles';
 
-const SearchBar = ({value, onChangeText, onSubmitEditing}) => {
+const SearchBar = ({value, onChangeText, onSubmitEditing, onPress}) => {
   return (
     <View style={styles.wrapper}>
       <TextInput
@@ -15,7 +15,9 @@ const SearchBar = ({value, onChangeText, onSubmitEditing}) => {
         onChangeText={onChangeText}
         onSubmitEditing={onSubmitEditing}
       />
-      <Icon name="search" color="#fff" size={30} />
+      <TouchableOpacity onPress={onPress}>
+        <Icon name="search" color="#fff" size={30} />
+      </TouchableOpacity>
     </View>
   );
 };

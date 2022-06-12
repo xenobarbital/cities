@@ -1,15 +1,15 @@
 import React, {useMemo} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './styles';
 
-const CityBar = ({city, temp, time}) => {
+const CityBar = ({city, temp, time, handlePress}) => {
   const temperature = useMemo(() => {
     return temp > 0 ? `+${temp}` : temp.toString();
   }, [temp]);
 
   return (
-    <View style={styles.wrapper}>
+    <TouchableOpacity onLongPress={handlePress} style={styles.wrapper}>
       <View>
         <Text style={[styles.text, styles.textCity]}>{city}</Text>
         <Text style={[styles.text, styles.textTime]}>{time}</Text>
@@ -18,7 +18,7 @@ const CityBar = ({city, temp, time}) => {
         <Text style={[styles.text, styles.textTemperature]}>{temperature}</Text>
         <Text style={[styles.text, styles.superscript]}>o</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
