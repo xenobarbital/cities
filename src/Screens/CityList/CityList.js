@@ -5,6 +5,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   ActivityIndicator,
+  ToastAndroid,
 } from 'react-native';
 import Config from 'react-native-config';
 import axios from 'axios';
@@ -28,6 +29,14 @@ const CityList = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [state, dispatch] = useReducer(reducer, []);
+
+  const showToast = () => {
+    ToastAndroid.showWithGravity(
+      'An error ocurred',
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER,
+    );
+  };
 
   const getData = query => {
     const params = {
@@ -54,11 +63,9 @@ const CityList = () => {
           type: 'add',
           data: cityData,
         });
-
-        console.log('City data', cityData);
       })
       .catch(error => {
-        console.log('Error', error);
+        showToast();
       })
       .finally(() => {
         setLoading(false);
@@ -67,8 +74,6 @@ const CityList = () => {
   };
 
   const submitQuery = ({nativeEvent}) => {
-    console.log('API key', Config.API_KEY);
-    console.log('Bambucha', nativeEvent.text);
     getData(nativeEvent.text);
   };
 
