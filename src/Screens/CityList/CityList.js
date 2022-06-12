@@ -14,6 +14,58 @@ import SearchBar from '../../Components/SearchBar';
 import CityBar from '../../Components/CityBar';
 import styles from './styles';
 
+const MOCK_DATA = [
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Buenos Aires desanto',
+    temp: 45,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+  {
+    city: 'Moscow',
+    temp: 0,
+    time: '4:25',
+    id: 'id' + Math.random().toString(16).slice(2),
+    handlePress: () => console.log('kek'),
+  },
+];
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
@@ -121,7 +173,7 @@ const CityList = () => {
         />
       </View>
       <FlatList
-        data={state}
+        data={MOCK_DATA}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
           <CityBar {...item} handlePress={deleteData(item.id)} />

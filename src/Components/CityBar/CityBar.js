@@ -10,7 +10,7 @@ const CityBar = ({city, temp, time, handlePress}) => {
 
   return (
     <TouchableOpacity onLongPress={handlePress} style={styles.wrapper}>
-      <View>
+      <View style={styles.leftBlock}>
         <Text style={[styles.text, styles.textCity]}>{city}</Text>
         <Text style={[styles.text, styles.textTime]}>{time}</Text>
       </View>

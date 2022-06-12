@@ -1,6 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import colors from '../../constants/colors';
+
+const {width} = Dimensions.get('screen');
+const breakPoint = width > 360;
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -15,26 +18,29 @@ const styles = StyleSheet.create({
     color: colors.white,
   },
   textCity: {
-    fontSize: 20,
+    fontSize: breakPoint ? 20 : 16,
     fontFamily: 'Montserrat-Bold',
     marginBottom: 11,
   },
   textTime: {
-    fontSize: 20,
+    fontSize: breakPoint ? 20 : 16,
     fontFamily: 'Montserrat-SemiBold',
   },
   textTemperature: {
-    fontSize: 64,
+    fontSize: breakPoint ? 64 : 40,
     fontFamily: 'Montserrat-SemiBold',
   },
   superscript: {
-    fontSize: 20,
+    fontSize: breakPoint ? 20 : 15,
     lineHeight: 22,
     fontFamily: 'Montserrat-SemiBold',
   },
   rightBlock: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+  },
+  leftBlock: {
+    maxWidth: '60%',
   },
 });
 

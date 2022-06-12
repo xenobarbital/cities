@@ -1,6 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import colors from '../../constants/colors';
+
+const {width} = Dimensions.get('screen');
+const breakPoint = width > 360;
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -11,11 +14,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 11,
     borderBottomColor: colors.white,
     borderBottomWidth: 2,
-    marginBottom: 75,
+    marginBottom: breakPoint ? 75 : 50,
   },
   textInput: {
     color: colors.white,
-    fontSize: 24,
+    fontSize: breakPoint ? 24 : 20,
     width: '85%',
   },
 });
