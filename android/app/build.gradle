@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -287,6 +288,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    // added manually
+    implementation project(':react-native-config')
 }
 
 if (isNewArchitectureEnabled()) {
